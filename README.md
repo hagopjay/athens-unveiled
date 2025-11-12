@@ -1,4 +1,4 @@
-[[!athens_remix.jpg]]
+[[!img athens_remix.jpg size=800x350 alt="Athens Remix Project" align=center]]
 
 ## Project info
 
