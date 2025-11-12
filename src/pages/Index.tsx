@@ -10,6 +10,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Separator } from '@/components/ui/separator';
+import { DeepAnalysisPanel } from '@/components/DeepAnalysisPanel';
+import { HarmonicVisualizer } from '@/components/HarmonicVisualizer';
 
 interface Figure {
   id: string;
@@ -36,6 +38,7 @@ const Index = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [tourStep, setTourStep] = useState(-1);
   const [showLabels, setShowLabels] = useState(true);
+  const [showHarmonics, setShowHarmonics] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const figures: Figure[] = [
@@ -644,7 +647,7 @@ const Index = () => {
               </h1>
               <p className="text-muted-foreground flex items-center gap-2">
                 <Sparkles className="w-4 h-4" />
-                An Interactive Journey Through Western Philosophy
+                An Interactive Journey Through Western Philosophy's Hidden Architecture
               </p>
             </div>
             <Button 
@@ -675,6 +678,14 @@ const Index = () => {
               >
                 <MapPin className="w-4 h-4 mr-2" />
                 Labels
+              </Button>
+              <Button
+                variant={showHarmonics ? "default" : "outline"}
+                onClick={() => setShowHarmonics(!showHarmonics)}
+                size="sm"
+              >
+                <Sparkles className="w-4 h-4 mr-2" />
+                Harmonics
               </Button>
             </div>
           </div>
@@ -735,7 +746,7 @@ const Index = () => {
 
           {/* Mode Selector */}
           <div className="absolute top-4 left-4 bg-card/95 backdrop-blur rounded-lg shadow-medium overflow-hidden">
-            <div className="p-2 space-y-1">
+          <div className="p-2 space-y-1">
               <Button
                 onClick={() => setMode('explore')}
                 variant={mode === 'explore' ? 'default' : 'ghost'}
@@ -772,6 +783,15 @@ const Index = () => {
                 <Users className="w-4 h-4 mr-2" />
                 Symbolism
               </Button>
+              <Button
+                onClick={() => setMode('deep')}
+                variant={mode === 'deep' ? 'default' : 'ghost'}
+                size="sm"
+                className="w-full justify-start"
+              >
+                <Sparkles className="w-4 h-4 mr-2" />
+                Deep Analysis
+              </Button>
             </div>
           </div>
 
@@ -802,11 +822,11 @@ const Index = () => {
         </div>
 
         {/* Info Panel */}
-        <div className="w-[450px] bg-card border-l border-border">
+        <div className="w-[500px] bg-card border-l border-border">
           <ScrollArea className="h-full">
             <div className="p-6">
               <Tabs value={mode} onValueChange={setMode} className="w-full">
-                <TabsList className="grid w-full grid-cols-4 mb-6">
+                <TabsList className="grid w-full grid-cols-5 mb-6">
                   <TabsTrigger value="explore">
                     <Eye className="w-4 h-4" />
                   </TabsTrigger>
@@ -818,6 +838,9 @@ const Index = () => {
                   </TabsTrigger>
                   <TabsTrigger value="symbolism">
                     <Lightbulb className="w-4 h-4" />
+                  </TabsTrigger>
+                  <TabsTrigger value="deep">
+                    <Sparkles className="w-4 h-4" />
                   </TabsTrigger>
                 </TabsList>
 
@@ -1019,6 +1042,11 @@ const Index = () => {
                       </CardContent>
                     </Card>
                   ))}
+                  <HarmonicVisualizer isActive={showHarmonics} />
+                </TabsContent>
+
+                <TabsContent value="deep" className="space-y-4">
+                  <DeepAnalysisPanel />
                 </TabsContent>
               </Tabs>
             </div>
