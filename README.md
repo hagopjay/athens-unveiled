@@ -1,4 +1,4 @@
-[[athens_remix.jpeg]]
+[[!athens_remix.jpg]]
 
 ## Project info
 
