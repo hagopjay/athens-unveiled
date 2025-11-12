@@ -1,4 +1,4 @@
-# Welcome to your Lovable project
+[[athens_remix.jpeg]]
 
 ## Project info
 
