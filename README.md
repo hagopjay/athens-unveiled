@@ -4,6 +4,8 @@
 ## Project info
 
 **URL**: https://lovable.dev/projects/d7f8c944-d9f7-49fb-bbda-682b4bbcb82c
+**3D**: https://marble.worldlabs.ai/world/3d7de375-6952-484e-9bc3-922d5b342094
+
 
 ## How can I edit this code?
 
