@@ -1,6 +1,6 @@
 ![Athens Remix Project](athens_remix.jpg)
 
-![Athens Remix Panorama](thensSchoolWorld%201_pano.png)
+![Athens Remix Panorama](AthensSchoolWorld%201_pano.png)
 ## Project info
 
 **URL**: https://lovable.dev/projects/d7f8c944-d9f7-49fb-bbda-682b4bbcb82c
